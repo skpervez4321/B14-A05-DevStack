@@ -11,11 +11,10 @@ function TechnologyCard({ tech, onAdd, isAdded }) {
         <span className="bg-violet-100 text-violet-700 px-2 py-1 rounded-full text-xs">{tech.category}</span>
         <span>{tech.difficulty} · ⭐ {tech.rating}</span>
       </div>
-      <button
+           <button
         onClick={() => onAdd(tech)}
-        disabled={isAdded}
         className={`mt-2 py-2 rounded-full font-medium text-white ${
-          isAdded ? 'bg-gray-400 cursor-not-allowed' : 'bg-gray-900 hover:bg-gray-800'
+          isAdded ? 'bg-gray-400' : 'bg-gray-900 hover:bg-gray-800'
         }`}
       >
         {isAdded ? '✓ Added to Stack' : 'Add to Stack'}

@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import banner from './assets/banner-stack.png';
 import TechnologyCard from './components/TechnologyCard';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
   const [stack, setStack] = useState([]);
 const [technologies, setTechnologies] = useState([]);
@@ -15,20 +17,24 @@ const [technologies, setTechnologies] = useState([]);
       });
   }, []);
 
-  const handleAdd = (tech) => {
+    const handleAdd = (tech) => {
     const alreadyAdded = stack.find((item) => item.id === tech.id);
     if (alreadyAdded) {
-      alert(`${tech.name} is already in your stack!`);
+      toast.warning(`${tech.name} is already in your stack!`);
       return;
     }
     setStack([...stack, tech]);
+    toast.success(`${tech.name} added to your stack!`);
   };
 
-  const handleRemove = (id) => {
+    const handleRemove = (id) => {
+    const removed = stack.find((item) => item.id === id);
     setStack(stack.filter((item) => item.id !== id));
+    toast.info(`${removed.name} removed from your stack.`);
   };
   return (
     <div className="min-h-screen bg-white">
+            <ToastContainer position="top-right" autoClose={2000} />
       {/* Navbar */}
       <nav className="flex items-center justify-between px-6 py-4 shadow-sm sticky top-0 bg-white z-50">
         <div className="text-xl font-bold">
