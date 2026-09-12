@@ -39,4 +39,4 @@ Parent থেকে child এ data props দিয়ে পাঠানো হ�
 
 ## What to Submit
 - GitHub Repository Link: https://github.com/skpervez4321/B14-A05-DevStack
-- Live Site Link: (   )
+- Live Site Link: https://b14-a05-dev-stack-one.vercel.app
