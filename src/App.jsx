@@ -5,6 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 function App() {
   const [stack, setStack] = useState([]);
+    const [menuOpen, setMenuOpen] = useState(false);
 const [technologies, setTechnologies] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -35,8 +36,15 @@ const [technologies, setTechnologies] = useState([]);
   return (
     <div className="min-h-screen bg-white">
             <ToastContainer position="top-right" autoClose={2000} />
-      {/* Navbar */}
+            {/* Navbar */}
       <nav className="flex items-center justify-between px-6 py-4 shadow-sm sticky top-0 bg-white z-50">
+        <button
+          className="md:hidden text-2xl"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          ☰
+        </button>
         <div className="text-xl font-bold">
           <span className="text-gray-900">Dev</span>
           <span className="bg-gradient-to-r from-pink-500 to-violet-500 bg-clip-text text-transparent"> Stack</span>
@@ -56,6 +64,15 @@ const [technologies, setTechnologies] = useState([]);
         </div>
       </nav>
 
+      {menuOpen && (
+        <div className="md:hidden flex flex-col gap-4 px-6 py-4 border-b border-gray-200 text-gray-600 font-medium">
+          <a href="#" className="hover:text-gray-900">Home</a>
+          <a href="#" className="hover:text-gray-900">Technologies</a>
+          <a href="#" className="hover:text-gray-900">Projects</a>
+          <a href="#" className="hover:text-gray-900">About</a>
+          <a href="#" className="hover:text-gray-900">Contact</a>
+        </div>
+      )}
       {/* Hero */}
       <section className="flex flex-col md:flex-row items-center justify-between px-10 py-16 gap-8">
         <div className="max-w-lg">
@@ -78,8 +95,8 @@ const [technologies, setTechnologies] = useState([]);
             </button>
           </div>
         </div>
-        <div>
-          {/* এখানে পরে banner-stack.png ছবি বসাবো */}
+                <div>
+          <img src={banner} alt="Dev stack illustration" className="w-full max-w-md" />
         </div>
       </section>
             {/* Technologies + Your Stack */}
