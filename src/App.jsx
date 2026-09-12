@@ -137,6 +137,50 @@ const [technologies, setTechnologies] = useState([]);
           </div>
         )}
       </section>
+            <footer className="border-t border-gray-200 px-10 py-10 mt-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <div className="text-xl font-bold mb-2">
+              <span className="text-gray-900">Dev</span>
+              <span className="bg-gradient-to-r from-pink-500 to-violet-500 bg-clip-text text-transparent"> Stack</span>
+            </div>
+            <p className="text-sm text-gray-500">
+              Curated tools, technologies, and resources for developers building modern web apps.
+            </p>
+            <div className="flex gap-4 mt-4 text-sm text-gray-600">
+              <a href="#">GitHub</a>
+              <a href="#">Twitter</a>
+              <a href="#">LinkedIn</a>
+            </div>
+          </div>
+          <div>
+            <h4 className="font-semibold mb-2">Product</h4>
+            <ul className="text-sm text-gray-500 flex flex-col gap-1">
+              <li>Home</li>
+              <li>Technologies</li>
+              <li>Projects</li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-semibold mb-2">Company</h4>
+            <ul className="text-sm text-gray-500 flex flex-col gap-1">
+              <li>About</li>
+              <li>Contact</li>
+              <li>Careers</li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-semibold mb-2">Legal</h4>
+            <ul className="text-sm text-gray-500 flex flex-col gap-1">
+              <li>Privacy Policy</li>
+              <li>Terms of Service</li>
+            </ul>
+          </div>
+        </div>
+        <div className="border-t border-gray-200 mt-8 pt-6 text-sm text-gray-500 text-center">
+          © 2026 Dev Stack. All rights reserved.
+        </div>
+      </footer>
     </div>
   );
 }
